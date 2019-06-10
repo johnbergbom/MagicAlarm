@@ -1,0 +1,143 @@
+<Sound_theme>
+	<Version>1.0</Version>
+	<Name>Wind</Name>
+	<Description>Gradually increasing wind.</Description>
+	<Author>Lauber</Author>
+	<REM>
+		<Action>
+			<Type>Initialization</Type><!-- Ajetaan vain kerran, kun tullaan tähän tilaan -->
+			<AdjustVolume>1</AdjustVolume><!-- Arvot 1-100 -->
+		</Action>
+		<Phase>
+			<!-- Rounds>200</Rounds -->
+			<!-- Order>Random</Order -->
+			<!-- Length>60</Length -->
+			<Action>
+				<Type>Blinking_light</Type><!-- Värejä ei aseteta vilkkumiselle, jolloin ne tulee olla satunnaiset -->
+			</Action>
+			<Phase>
+				<Order>Random</Order>
+				<Action>
+					<Type>Sound</Type>
+					<SoundResource>Wind_1.1</SoundResource>
+					<SoundResourceType>mp3</SoundResourceType>
+					<RelativeVolume>-11-+21</RelativeVolume><!-- Soitetaan tämä ääni satunnaisella voimakkuudella, joka on suhteessa -+10 globaaliin voimakkuuteen -->
+				</Action>
+				<Action>
+					<Type>Sound</Type>
+					<SoundResource>Wind_1.2</SoundResource>
+					<SoundResourceType>mp3</SoundResourceType>
+					<RelativeVolume>-8-+14</RelativeVolume>
+				</Action>
+				<Action>
+					<Type>Sound</Type>
+					<SoundResource>Wind_3.1</SoundResource>
+					<SoundResourceType>mp3</SoundResourceType>
+					<RelativeVolume>-11-+11</RelativeVolume>
+				</Action>
+				<Action>
+					<Type>Sound</Type>
+					<SoundResource>Wind_3.6</SoundResource>
+					<SoundResourceType>mp3</SoundResourceType>
+					<RelativeVolume>-8-+8</RelativeVolume>
+				</Action>
+				<Action>
+					<Type>Sound</Type>
+					<SoundResource>Wind</SoundResource>
+					<SoundResourceType>mp3</SoundResourceType>
+					<RelativeVolume>-8-+8</RelativeVolume>
+				</Action>
+			</Phase>
+			<Action>
+				<Type>Pause</Type>
+				<Length>1-10</Length>
+			</Action>
+		</Phase>
+		<Action>
+			<Type>Volume</Type>
+			<AdjustVolumeByPhaseLength>184</AdjustVolumeByPhaseLength>
+		</Action>
+	</REM>
+	<Wake_up>
+		<Action>
+			<Type>Initialization</Type><!-- Ajetaan vain kerran, kun tullaan tähän tilaan -->
+			<AdjustVolume>104</AdjustVolume>
+		</Action>
+		<Action>
+			<Type>Blinking_light</Type>
+			<BgColor>RGB:255,255,255</BgColor><!-- Vain taustaväri asetetaan, joten fg tulee olla satunnainen -->
+		</Action>
+		<Phase>
+			<Rounds>10</Rounds>
+			<Action>
+				<Type>Sound</Type>
+				<SoundResource>BeepBeep</SoundResource>
+				<SoundResourceType>mp3</SoundResourceType>
+			</Action>
+		</Phase>
+		<Action>
+			<Type>Pause</Type>
+			<Length>5</Length>
+		</Action>
+		<Action>
+			<Type>Volume</Type>
+			<AdjustVolume>+16</AdjustVolume>
+		</Action>
+	</Wake_up>
+	<Snooze_interrupt>
+		<Action>
+			<Type>Initialization</Type><!-- Ajetaan vain kerran, kun tullaan tähän tilaan -->
+			<AdjustVolume>94</AdjustVolume>
+		</Action>
+		<Phase>
+			<Order>Random</Order>
+			<Phase>
+				<Order>Random</Order>
+				<Action>
+					<Type>Sound</Type>
+					<SoundResource>Wind_1.1</SoundResource>
+					<SoundResourceType>mp3</SoundResourceType>
+					<RelativeVolume>-8-+24</RelativeVolume>
+				</Action>
+				<Action>
+					<Type>Sound</Type>
+					<SoundResource>Wind_1.2</SoundResource>
+					<SoundResourceType>mp3</SoundResourceType>
+					<RelativeVolume>-8-+24</RelativeVolume>
+				</Action>
+				<Action>
+					<Type>Sound</Type>
+					<SoundResource>Wind_3.1</SoundResource>
+					<SoundResourceType>mp3</SoundResourceType>
+					<RelativeVolume>-8-+8</RelativeVolume>
+				</Action>
+				<Action>
+					<Type>Sound</Type>
+					<SoundResource>Wind_3.6</SoundResource>
+					<SoundResourceType>mp3</SoundResourceType>
+					<RelativeVolume>-8-+8</RelativeVolume>
+				</Action>
+				<Action>
+					<Type>Sound</Type>
+					<SoundResource>Wind</SoundResource>
+					<SoundResourceType>mp3</SoundResourceType>
+					<RelativeVolume>-8-+8</RelativeVolume>
+				</Action>
+			</Phase>
+			<Action>
+				<Type>Pause</Type>
+				<Length>30-45</Length>
+			</Action>
+		</Phase>
+	</Snooze_interrupt>
+	<Shock_alarm>
+		<Phase>
+			<Action>
+				<Type>Sound</Type>
+				<SoundResource>Trumpet</SoundResource>
+				<SoundResourceType>mp3</SoundResourceType>
+				<HardVolume>100</HardVolume><!-- Tätä ei skaalata käyttäjän asettaman äänenvoimakkuustason mukaan vaan käytetään suoraan tätä arvoa. -->
+			</Action>
+		</Phase>
+	</Shock_alarm>
+</Sound_theme>
